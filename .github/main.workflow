@@ -1,5 +1,5 @@
 workflow "Build and Test" {
-  resolves = ["GitHub Action for npm"]
+  resolves = ["Test"]
   on = "push"
 }
 
