@@ -17,5 +17,5 @@ action "Test" {
 action "Lint" {
   needs = "Build"
   uses = "actions/npm@master"
-  args = "lint"
+  args = "run lint"
 }
