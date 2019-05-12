@@ -28,3 +28,9 @@ action "Pre-publish" {
     NETLIFY_DIR = "build"
   }
 }
+
+action "sitespeed" {
+  needs = "Pre-publish"
+  uses = "docker://sitespeedio/sitespeed.io:8.0.6-action"
+  args = "https://www.sitespeed.io -n 1 --budget.configPath /github/workspace/.github/budget.json"
+}
