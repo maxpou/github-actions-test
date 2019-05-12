@@ -1,5 +1,5 @@
 workflow "Build, Test and Lint" {
-  resolves = ["Test", "Lint", "Pre-publish"]
+  resolves = ["Test", "Lint", "sitespeed"]
   on = "push"
 }
 
