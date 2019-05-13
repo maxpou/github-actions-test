@@ -1,6 +1,11 @@
 workflow "Build, Test and Lint" {
-  resolves = ["sitespeed"]
+  resolves = ["sitespeed", "custom"]
   on = "push"
+}
+
+action "custom" {
+  uses = "./action-speedtest.io-netlify"
+  args = "world"
 }
 
 action "Build" {
