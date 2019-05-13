@@ -1,5 +1,5 @@
 workflow "Build, Test and Lint" {
-  resolves = ["Test", "Lint", "sitespeed"]
+  resolves = ["sitespeed"]
   on = "push"
 }
 
@@ -21,6 +21,7 @@ action "Lint" {
 }
 
 action "Pre-publish" {
+  needs = ["Test", "Lint"]
   uses = "netlify/actions/build@master"
   secrets = ["GITHUB_TOKEN"]
   env = {
