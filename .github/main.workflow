@@ -33,5 +33,5 @@ action "Pre-publish" {
 action "sitespeed" {
   needs = "Pre-publish"
   uses = "docker://sitespeedio/sitespeed.io:8.0.6-action"
-  args = "https://www.sitespeed.io -n 1 --budget.configPath /github/workspace/.github/budget.json"
+  args = "https://deploy-preview-4--github-actions-test.netlify.com/ -n 1 --budget.configPath /github/workspace/.github/budget.json"
 }
